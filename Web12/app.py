@@ -3,14 +3,12 @@ import random
 
 app = Flask(__name__)
 
-# Дані для Завдання 2
 movies_db = {
     1: {"title": "Інтерстеллар", "desc": "Подорож крізь час і простір."},
     2: {"title": "Початок", "desc": "Світ усвідомлених сновидінь."},
     3: {"title": "Дюна", "desc": "Боротьба за планету Арракіс."}
 }
 
-# Список для Завдання 3
 participants_list = []
 
 @app.route("/")
@@ -22,7 +20,6 @@ def countries():
     places = ["Париж", "Кіото", "Барселона", "Балі", "Рим"]
     return render_template("countries.html", places=places)
 
-# ЗАВДАННЯ 2
 @app.route("/movies")
 def movies():
     return render_template("movies.html", movies=movies_db)
@@ -38,7 +35,6 @@ def random_movie():
     movie_id = random.choice(list(movies_db.keys()))
     return redirect(url_for('movie_detail', movie_id=movie_id))
 
-# ЗАВДАННЯ 3
 @app.route("/event_register", methods=["GET", "POST"])
 def event_register():
     if request.method == "POST":
