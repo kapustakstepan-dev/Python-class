@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ movie.title }}</h1>
+<p class="lead">{{ movie.desc }}</p>
+<a href="{{ url_for('movies') }}" class="btn btn-outline-primary">Назад до списку</a>
+{% endblock %}

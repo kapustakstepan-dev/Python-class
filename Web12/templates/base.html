@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <title>Світ подорожей</title>
+    <style>
+        nav {
+            margin-bottom: 20px;
+        }
+        nav a, nav button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <a href="{{ url_for('index') }}">Головна</a>
+    <a href="{{ url_for('countries') }}">Країни</a>
+    <a href="{{ url_for('contact') }}">Контакти</a>
+</nav>
+
+{% block content %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Список зареєстрованих учасників</h2>
+<table class="table table-hover table-bordered mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th>Ім'я</th>
+            <th>Email</th>
+            <th>Час участі</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in participants %}
+        <tr>
+            <td>{{ p.name }}</td>
+            <td>{{ p.email }}</td>
+            <td>{{ p.time }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{{ url_for('index') }}" class="btn btn-secondary">На головну</a>
+{% endblock %}
