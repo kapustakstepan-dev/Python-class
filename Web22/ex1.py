@@ -13,7 +13,7 @@ csrf = CSRFProtect(app)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        mensajes = request.form.get('mensaje')
+        mensajes = request.form.get('message') 
         return f"Захист спрацював! Повідомлення отримано: {mensajes}"
     
     return render_template('index.html')
